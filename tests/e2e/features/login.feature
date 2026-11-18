@@ -18,7 +18,7 @@ Feature: Login
   Scenario Outline: login with missing data
     Given the user has not logged in
     And the user has opened the login page
-    When the users logs in with <username> as username and <password> as password
+    When the user logs in with <username> as username and <password> as password
     Then the missing fields should be highlighted
 
     Examples:
