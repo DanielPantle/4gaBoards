@@ -6,8 +6,7 @@ Feature: Login
 Scenario Outline: login with invalid credentials
   Given the user has not logged in
   And the user has opened the login page
-  When the user enters <username> and <password>
-  And the user selects to log in
+  When the user logs in with <username> as username and <password> as password
   Then the message "Invalid username or password" should be displayed on the login page
 
   Examples:
@@ -19,10 +18,8 @@ Scenario Outline: login with invalid credentials
 Scenario Outline: login with missing data
   Given the user has not logged in
   And the user has opened the login page
-  When the user enters <username> as username and <password> as password
-  And the user selects to log in
-  Then the login should be prevented
-  And the missing fields should be highlighted
+  When the users logs in with <username> as username and <password> as password
+  Then the missing fields should be highlighted
 
   Examples:
     | username | password |
@@ -33,8 +30,7 @@ Scenario Outline: login with missing data
 Scenario: login with valid credentials
   Given the user has not logged in
   And the user has opened the login page
-  When the user enters "demo" as username and "demo" as password
-  And the user selects to log in
+  When the user logs in with "demo" as username and "demo" as password
   Then the user should be logged in
   And the homepage should be displayed
 
