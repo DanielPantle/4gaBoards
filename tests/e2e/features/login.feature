@@ -6,7 +6,7 @@ Feature: Login
   Scenario Outline: login with invalid credentials
     Given the user has not logged in
     And the user has opened the login page
-    When the user logs in with <username> as username and <password> as password
+    When the user logs in with "<username>" as username and "<password>" as password
     Then the message "Invalid username or password" should be displayed on the login page
 
     Examples:
@@ -18,7 +18,7 @@ Feature: Login
   Scenario Outline: login with missing data
     Given the user has not logged in
     And the user has opened the login page
-    When the user logs in with <username> as username and <password> as password
+    When the user logs in with "<username>" as username and "<password>" as password
     Then the missing fields should be highlighted
 
     Examples:
